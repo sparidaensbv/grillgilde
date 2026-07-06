@@ -343,6 +343,12 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
 .modal-fields label{width:64px;font-size:14px;color:#4a4034}
 .modal-fields input{flex:1;border:1px solid #d9d2c6;border-radius:8px;padding:10px 12px;font-family:inherit;font-size:14px;color:#221C16;box-sizing:border-box}
 .modal-submit{width:100%;margin-top:18px;justify-content:center}
+
+@media(max-width:760px){
+ .foot-grid{grid-template-columns:1fr 1fr;gap:26px 20px}
+ .foot-grid>div:first-child{grid-column:1 / -1}
+ .foot-bot{flex-direction:column;gap:8px;align-items:flex-start}
+}
 /* editorial intro story */
 .intro-story{font-size:16.5px;line-height:1.7;color:var(--ink);margin:16px 0 26px;padding:18px 22px;background:#fff;border:1px solid var(--ash-line);border-left:3px solid var(--brass);border-radius:8px}
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /beheer.html
-Sitemap: https://grillgilde.nl/sitemap.xml
+Sitemap: https://gloeiwerk.nl/sitemap.xml
