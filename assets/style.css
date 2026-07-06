@@ -293,7 +293,7 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
 .more{background:none;border:none;color:var(--ember);font-family:'"'"'Space Mono'"'"',monospace;font-size:11px;font-weight:700;cursor:pointer;padding:8px 0 2px;letter-spacing:.04em}
 .more:hover{text-decoration:underline}
 .brand .seal{width:auto;height:54px;flex:0 0 auto}
-.brand .wm b{font-size:24px}
+.brand .wm b{font-family:'Cinzel',serif;font-weight:900;font-size:21px;letter-spacing:-0.03em;text-transform:uppercase}
 .brand .wm span{font-size:10px}
 .about-seal img{opacity:.95}
 /* editorial intro story */
