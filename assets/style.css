@@ -293,7 +293,7 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
 .more{background:none;border:none;color:var(--ember);font-family:'"'"'Space Mono'"'"',monospace;font-size:11px;font-weight:700;cursor:pointer;padding:8px 0 2px;letter-spacing:.04em}
 .more:hover{text-decoration:underline}
 .brand .seal{width:auto;height:54px;flex:0 0 auto}
-.brand .wm b{font-family:'Cinzel',serif;font-weight:900;font-size:21px;letter-spacing:-0.03em;text-transform:uppercase}
+.brand .wm b{font-family:'Lobster',cursive;font-weight:400;font-size:32px;letter-spacing:0;text-transform:none;line-height:1}
 .brand .wm span{font-size:10px}
 .about-seal img{opacity:.95}
 
@@ -317,7 +317,7 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
  header.nav-open .nav-toggle span:nth-child(2){opacity:0}
  header.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
-@media(max-width:600px){.brand .seal{height:46px}.brand .wm b{font-size:18px}}
+@media(max-width:600px){.brand .seal{height:46px}.brand .wm b{font-size:26px}}
 
 /* --- beoordeling / rating --- */
 .rating-block{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 22px}
