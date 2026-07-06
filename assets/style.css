@@ -296,6 +296,28 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
 .brand .wm b{font-family:'Cinzel',serif;font-weight:900;font-size:21px;letter-spacing:-0.03em;text-transform:uppercase}
 .brand .wm span{font-size:10px}
 .about-seal img{opacity:.95}
+
+/* --- mobiel menu + uitlijning --- */
+.brand{align-items:center}
+.brand .wm{display:flex;flex-direction:column;justify-content:center}
+.foot-grid .brand{display:flex;align-items:center;gap:12px}
+.foot-grid .brand .seal{height:46px}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px}
+.nav-toggle span{display:block;height:2px;width:100%;background:var(--paper);border-radius:2px;transition:.22s}
+.mob-only{display:none}
+@media(max-width:960px){
+ .nav-toggle{display:flex}
+ .nav-cta .btn{display:none}
+ nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--soot);flex-direction:column;gap:0;padding:6px 0;border-top:1px solid rgba(176,138,79,.25);box-shadow:0 16px 34px rgba(0,0,0,.45);z-index:60}
+ header.nav-open nav.links{display:flex}
+ nav.links a{padding:15px 26px;width:100%;font-size:16px}
+ nav.links a.active::after{left:26px;right:auto;width:18px}
+ .mob-only{display:block!important}
+ header.nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+ header.nav-open .nav-toggle span:nth-child(2){opacity:0}
+ header.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+@media(max-width:600px){.brand .seal{height:46px}.brand .wm b{font-size:18px}}
 /* editorial intro story */
 .intro-story{font-size:16.5px;line-height:1.7;color:var(--ink);margin:16px 0 26px;padding:18px 22px;background:#fff;border:1px solid var(--ash-line);border-left:3px solid var(--brass);border-radius:8px}
 

@@ -45,4 +45,5 @@ function renderIng(){if(!GROUPS)return;const box=document.getElementById('ingred
  const sv=document.getElementById('sv');if(sv)sv.textContent=SERV;}
 function setServ(d){SERV=Math.min(12,Math.max(2,SERV+d));renderIng();}
 function subscribe(e){const box=e.target.closest('.nl-form');const inp=box.querySelector('input');if(!inp.value||!inp.value.includes('@')){toast('Vul een geldig e-mailadres in');return;}toast('Bedankt! Je staat op de lijst (demo)');inp.value='';}
+function toggleNav(btn){const h=document.querySelector("header");const o=h.classList.toggle("nav-open");btn.setAttribute("aria-expanded",o);}
 let toastT;function toast(m){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
