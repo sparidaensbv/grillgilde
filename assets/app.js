@@ -45,5 +45,17 @@ function renderIng(){if(!GROUPS)return;const box=document.getElementById('ingred
  const sv=document.getElementById('sv');if(sv)sv.textContent=SERV;}
 function setServ(d){SERV=Math.min(12,Math.max(2,SERV+d));renderIng();}
 function subscribe(e){const box=e.target.closest('.nl-form');const inp=box.querySelector('input');if(!inp.value||!inp.value.includes('@')){toast('Vul een geldig e-mailadres in');return;}toast('Bedankt! Je staat op de lijst (demo)');inp.value='';}
+function starHTML(v){var pct=(v/5*100).toFixed(1);return '<span class="stars"><span class="stars-bg">\u2605\u2605\u2605\u2605\u2605</span><span class="stars-fg" style="width:'+pct+'%">\u2605\u2605\u2605\u2605\u2605</span></span>';}
+function rKey(s){return 'gg_rating_'+s;}
+function getRating(s){try{return JSON.parse(localStorage.getItem(rKey(s)))||{sum:0,count:0,mine:0};}catch(e){return {sum:0,count:0,mine:0};}}
+var curSlug=null,pickVal=0;
+function initRating(s){curSlug=s;renderRating();}
+function renderRating(){var d=getRating(curSlug);var el=document.getElementById('rating-stars');var num=document.getElementById('rating-num');if(!el)return;var avg=d.count?d.sum/d.count:0;el.innerHTML=starHTML(avg);num.textContent=d.count?(avg.toFixed(1).replace('.',',')+' van '+d.count+(d.count===1?' stem':' stemmen')):'Nog geen beoordelingen';}
+function openRate(){pickVal=0;renderPick();document.getElementById('rate-modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeRate(){document.getElementById('rate-modal').classList.remove('open');document.body.style.overflow='';}
+function renderPick(){var p=document.getElementById('stars-pick');if(!p)return;var h='';for(var i=1;i<=5;i++){h+='<span class="pstar'+(i<=pickVal?' on':'')+'" onclick="pickStar('+i+')" onmouseenter="hoverStar('+i+')" onmouseleave="renderPick()">\u2605</span>';}p.innerHTML=h;}
+function pickStar(i){pickVal=i;renderPick();}
+function hoverStar(i){var p=document.getElementById('stars-pick');if(!p)return;var c=p.children;for(var j=0;j<c.length;j++){c[j].classList.toggle('on',j<i);}}
+function submitRating(){if(!pickVal){toast('Kies eerst een aantal sterren');return;}var nm=(document.getElementById('rev-name').value||'').trim();var ml=(document.getElementById('rev-mail').value||'').trim();if(!nm){toast('Vul je naam in');return;}if(!ml||ml.indexOf('@')<1){toast('Vul een geldig e-mailadres in');return;}var d=getRating(curSlug);d.sum+=pickVal;d.count+=1;d.mine=pickVal;localStorage.setItem(rKey(curSlug),JSON.stringify(d));renderRating();closeRate();toast('Bedankt voor je beoordeling!');}
 function toggleNav(btn){const h=document.querySelector("header");const o=h.classList.toggle("nav-open");btn.setAttribute("aria-expanded",o);}
 let toastT;function toast(m){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}

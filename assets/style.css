@@ -318,6 +318,31 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
  header.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 @media(max-width:600px){.brand .seal{height:46px}.brand .wm b{font-size:18px}}
+
+/* --- beoordeling / rating --- */
+.rating-block{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:2px 0 22px}
+.stars{position:relative;display:inline-block;font-size:19px;line-height:1;letter-spacing:2px;font-family:Arial,sans-serif}
+.stars-bg{color:#d8d0c2}
+.stars-fg{color:var(--ember);position:absolute;top:0;left:0;white-space:nowrap;overflow:hidden}
+.rating-num{font-family:'Space Mono',monospace;font-size:13px;color:#6b5f52}
+.rate-link{background:none;border:none;color:var(--ember);font-weight:600;font-size:13.5px;cursor:pointer;padding:0;text-decoration:underline;font-family:inherit}
+.modal-overlay{position:fixed;inset:0;background:rgba(10,7,4,.62);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;color:#221C16;border-radius:14px;max-width:440px;width:100%;padding:26px 26px 28px;box-shadow:0 24px 70px rgba(0,0,0,.45);animation:modalin .18s ease}
+@keyframes modalin{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.modal-eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#221C16}
+.modal-x{background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:#8a7f70}
+.modal-recipe{text-align:center;font-family:'Fraunces',serif;font-size:20px;margin-bottom:2px}
+.stars-pick{display:flex;gap:6px;justify-content:center;font-size:34px;color:#d8d0c2;margin:8px 0 16px}
+.stars-pick .pstar{cursor:pointer;transition:color .1s;font-family:Arial,sans-serif}
+.stars-pick .pstar.on{color:var(--ember)}
+.modal textarea{width:100%;border:1px solid #d9d2c6;border-radius:8px;padding:12px;font-family:inherit;font-size:14px;color:#221C16;resize:vertical;box-sizing:border-box}
+.modal-fields{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.modal-fields .fld{display:flex;align-items:center;gap:12px}
+.modal-fields label{width:64px;font-size:14px;color:#4a4034}
+.modal-fields input{flex:1;border:1px solid #d9d2c6;border-radius:8px;padding:10px 12px;font-family:inherit;font-size:14px;color:#221C16;box-sizing:border-box}
+.modal-submit{width:100%;margin-top:18px;justify-content:center}
 /* editorial intro story */
 .intro-story{font-size:16.5px;line-height:1.7;color:var(--ink);margin:16px 0 26px;padding:18px 22px;background:#fff;border:1px solid var(--ash-line);border-left:3px solid var(--brass);border-radius:8px}
 
