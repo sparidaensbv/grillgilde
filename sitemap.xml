@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://grillgilde.nl/index.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/recepten.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menus.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/techniek.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/over.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/contact.html</loc><changefreq>weekly</changefreq></url>
@@ -30,4 +31,25 @@
   <url><loc>https://grillgilde.nl/recept-gepofte-groente-van-de-egg.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/recept-gepofte-zoete-aardappel.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://grillgilde.nl/recept-gegrilde-little-gem-caesar.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-klassieke-coleslaw.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-cornbread.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-gegrilde-maiskolf-met-kruidenboter.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-bbq-aardappelsalade.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-mac-en-cheese-van-de-bbq.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-bbq-baked-beans.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-gegrilde-groene-asperges.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-tzatziki.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-mexicaanse-rijst.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-gegrilde-watermeloen-met-feta-en-munt.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-burnt-end-baked-beans.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-miso-geglazuurde-aubergine.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-kimchi-coleslaw.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-chimichurri-krieltjes.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-gegrilde-halloumi-met-honing.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/recept-elote-salade.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menu-texas-low-and-slow-avond.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menu-argentijnse-asado.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menu-aziatische-grillavond.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menu-amerikaanse-cookout.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://grillgilde.nl/menu-mediterrane-grillavond.html</loc><changefreq>weekly</changefreq></url>
 </urlset>
