@@ -271,6 +271,21 @@ footer{background:var(--soot-2);color:var(--ash);padding:50px 0 30px;margin-top:
 .tax-links a:hover{border-color:var(--ember);color:var(--ember)}
 @media(max-width:760px){.newsletter .inner{grid-template-columns:1fr}}
 
+/* checkbox filter list */
+.fchecks{display:flex;flex-direction:column}
+.fcheck{display:flex;align-items:center;gap:10px;padding:7px 0;cursor:pointer;font-size:14px;color:var(--ink);user-select:none}
+.fcheck input{position:absolute;opacity:0;pointer-events:none}
+.fcheck .box{width:18px;height:18px;border:1.5px solid var(--ash-line);border-radius:4px;flex:0 0 18px;display:grid;place-items:center;transition:.15s;background:var(--paper)}
+.fcheck input:checked+.box{background:var(--ember);border-color:var(--ember)}
+.fcheck input:checked+.box::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px}
+.fcheck:hover .box{border-color:var(--brass)}
+.fcheck .ftxt{flex:1}
+.fcheck .cnt{font-family:'"'"'Space Mono'"'"',monospace;font-size:11px;color:var(--ink-soft)}
+.side-group{margin-bottom:16px;border-bottom:1px solid var(--ash-line);padding-bottom:10px}
+.side-group:last-of-type{border-bottom:none}
+/* editorial intro story */
+.intro-story{font-size:16.5px;line-height:1.7;color:var(--ink);margin:16px 0 26px;padding:18px 22px;background:#fff;border:1px solid var(--ash-line);border-left:3px solid var(--brass);border-radius:8px}
+
 /* gerecht + herkomst chips */
 .chip.on.herkomst{background:#7a4a1e;border-color:#7a4a1e;color:#fff}
 .chip.on.gerecht{background:#3B5B4E;border-color:#3B5B4E;color:#fff}

@@ -8,18 +8,19 @@ function card(r){const tag=r.meat||'Bijgerecht';const tagcls='card-tag'+(r.meat?
  const grade=r.gerecht==='Hoofdgerecht'?`<span class="card-grade ${gcls(r.grade)}">${r.grade}</span>`:'';
  return `<a class="card" href="recept-${r.slug}.html"><div class="card-img" style="background:${meatStyle[r.meat]}"><span class="${tagcls}">${tag}</span>${grade}<span class="origin-tag">${r.herkomst}</span><div class="photo-slot">${CAM}<div class="ps-label">Foto volgt</div></div></div><div class="card-body"><h3>${r.title}</h3><p>${r.desc}</p>${meta}</div></a>`;}
 let F={gerecht:new Set(),meat:new Set(),tech:new Set(),grade:new Set(),herkomst:new Set(),q:''};
+function cnt(k,v){return RECIPES.filter(r=>r[k]===v).length;}
 function initRecepten(){
  const uniq=k=>[...new Set(RECIPES.map(r=>r[k]).filter(Boolean))];
- const mk=(arr,box,cls)=>{const el=document.getElementById(box);if(el)el.innerHTML=arr.map(v=>`<span class="chip ${cls}" data-v="${v.replace(/&/g,'&amp;')}" data-g="${cls}">${v}</span>`).join('');};
+ const mk=(arr,box,cls)=>{const el=document.getElementById(box);if(el)el.innerHTML=arr.map(v=>`<label class="fcheck"><input type="checkbox" data-g="${cls}" data-v="${v}"><span class="box"></span><span class="ftxt">${v}</span><span class="cnt">${cnt(cls,v)}</span></label>`).join('');};
  mk(['Hoofdgerecht','Bijgerecht'],'chips-gerecht','gerecht');mk(uniq('meat'),'chips-meat','meat');mk(uniq('tech'),'chips-tech','tech');mk(['Leerling','Gezel','Meester'],'chips-grade','grade');mk(uniq('herkomst').sort(),'chips-herkomst','herkomst');
- document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{const g=c.dataset.g,v=c.dataset.v.replace(/&amp;/g,'&');if(F[g].has(v)){F[g].delete(v);c.classList.remove('on')}else{F[g].add(v);c.classList.add('on')}render();}));
+ document.querySelectorAll('.fcheck input').forEach(c=>c.addEventListener('change',()=>{const g=c.dataset.g,v=c.dataset.v;if(c.checked)F[g].add(v);else F[g].delete(v);render();}));
  document.getElementById('q').addEventListener('input',render);render();
 }
 function render(){F.q=document.getElementById('q').value.trim().toLowerCase();
  const out=RECIPES.filter(r=>{if(F.gerecht.size&&!F.gerecht.has(r.gerecht))return false;if(F.meat.size&&!F.meat.has(r.meat))return false;if(F.tech.size&&!F.tech.has(r.tech))return false;if(F.grade.size&&!F.grade.has(r.grade))return false;if(F.herkomst.size&&!F.herkomst.has(r.herkomst))return false;if(F.q&&!(r.title.toLowerCase().includes(F.q)||r.desc.toLowerCase().includes(F.q)||(r.meat||'').toLowerCase().includes(F.q)||r.herkomst.toLowerCase().includes(F.q)))return false;return true;});
  document.getElementById('grid').innerHTML=out.length?out.map(card).join(''):'<div class="empty"><h3>Niets gevonden</h3><p>Geen gerecht matcht deze filters.</p></div>';
  document.getElementById('result-count').textContent=out.length;}
-function resetRecepten(){F={gerecht:new Set(),meat:new Set(),tech:new Set(),grade:new Set(),herkomst:new Set(),q:''};document.getElementById('q').value='';document.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));render();}
+function resetRecepten(){F={gerecht:new Set(),meat:new Set(),tech:new Set(),grade:new Set(),herkomst:new Set(),q:''};document.getElementById('q').value='';document.querySelectorAll('.fcheck input').forEach(c=>c.checked=false);render();}
 /* ---- servings scaler ---- */
 let SERV=4; const BASE=4; let GROUPS=null;
 function initScaler(){const el=document.getElementById('ing-data');if(!el)return;try{GROUPS=JSON.parse(el.textContent);}catch(e){return;}renderIng();}
